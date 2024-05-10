@@ -1,14 +1,10 @@
 name: "Terraform Plan"
 
 on:
-  pull_request:
-    branches:
-      - main
-      # You can adjust the branches as needed
+  workflow_dispatch:
 
 jobs:
   terraform-plan:
-  
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout code"
@@ -21,9 +17,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: "~> 2.22.1"
+      
       - name: "Terraform Plan"
         id: plan
         run: terraform plan
-      
-
-    
