@@ -25,7 +25,7 @@ jobs:
       
       - name: "Terraform Plan"
         id: plan
-        run: terraform plan -input=false -no-color -parallelism=5
+        run: terraform plan
         env:
           NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           NEW_RELIC_API_KEY: ${{ secrets.NEW_RELIC_API_KEY }}
