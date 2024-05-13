@@ -3,9 +3,9 @@ variable "policy_names" {
 
 }
 
-variable "NEW_RELIC_API_KEY" {
+variable "NEWRELIC_API_KEY" {
   type = string
 }
-variable "NEW_RELIC_ACCOUNT_ID" {
+variable "NEWRELIC_ACCOUNT_ID" {
   type = number
 }
