@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEW_RELIC_API_KEY: ${{ secrets.NEW_RELIC_API_KEY }}
-      NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+      NEW_RELIC_API_KEY: ${{ secrets.NEWRELIC_API_KEY }}
+      NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEWRELIC_ACCOUNT_ID }}
 
     steps:
       - name: Checkout repository
@@ -25,8 +25,8 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          terraform plan -var="NEW_RELIC_API_KEY=${{ secrets.NEW_RELIC_API_KEY }}" -var="NEW_RELIC_ACCOUNT_ID=${{ secrets.NEW_RELIC_ACCOUNT_ID }}"
+          terraform plan -var="NEWRELIC_API_KEY=${{ secrets.NEWRELIC_API_KEY }}" -var="NEWRELIC_ACCOUNT_ID=${{ secrets.NEWRELIC_ACCOUNT_ID }}"
 
       - name: Terraform Apply 
         run: |
-          terraform apply -var="NEW_RELIC_API_KEY=${{ secrets.NEW_RELIC_API_KEY }}" -var="NEW_RELIC_ACCOUNT_ID=${{ secrets.NEW_RELIC_ACCOUNT_ID }}" -auto-approve 
+          terraform apply -var="NEWRELIC_API_KEY=${{ secrets.NEWRELIC_API_KEY }}" -var="NEWRELIC_ACCOUNT_ID=${{ secrets.NEWRELIC_ACCOUNT_ID }}" -auto-approve 
